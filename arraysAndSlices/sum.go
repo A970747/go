@@ -1,9 +1,5 @@
 package sum
 
-import (
-	"fmt"
-)
-
 //Sum sums a single slice
 func Sum(numbers []int) int {
 	var sum int = 0
@@ -23,10 +19,13 @@ func AllSlices(slices ...[]int) (sums []int) {
 
 //AllTails Adds the tails of all slices to a new slice
 func AllTails(slices ...[]int) (sums []int) {
-	fmt.Println(slices[0])
 	for _, slice := range slices {
-		tail := slice[0:]
-		sums = append(sums, Sum(tail))
+		if len(slice) == 0 {
+			sums = append(sums, 0)
+		} else {
+			tail := slice[1:]
+			sums = append(sums, Sum(tail))
+		}
 	}
 	return sums
 }

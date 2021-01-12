@@ -8,6 +8,21 @@ type Rectangle struct {
 	Height float64
 }
 
+//Circle new type for circle info
+type Circle struct {
+	Radius float64
+}
+
+//Triangle Area of a triangle given a side
+type Triangle struct {
+	Side float64
+}
+
+//Shape interface for Area()
+type Shape interface {
+	Area() float64
+}
+
 //Perimeter Perim of a rectangle given two sides
 func (r Rectangle) Perimeter() float64 {
 	return (r.Width + r.Height) * 2
@@ -18,19 +33,9 @@ func (r Rectangle) Area() float64 {
 	return r.Width * r.Height
 }
 
-//Circle new type for circle info
-type Circle struct {
-	Radius float64
-}
-
 //Area Area of a circle given struct's radius
 func (c Circle) Area() float64 {
 	return math.Pi * c.Radius * c.Radius
-}
-
-//Triangle Area of a triangle given a side
-type Triangle struct {
-	Side float64
 }
 
 //Area Area of a circle given struct's radius
