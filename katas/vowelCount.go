@@ -12,4 +12,5 @@ func vowelCount(str string) (count int) {
 		}
 	}
 	fmt.Println(count)
+	return count
 }
